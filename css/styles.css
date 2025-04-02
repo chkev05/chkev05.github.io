@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex; /* Flexbox to create a layout */
+    min-height: 100vh; /* Ensures the body takes at least the full height */
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 270px;
+    background: var(--bg-black-100);
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 100px 30px 30px; /* Added top padding to prevent overlap */
+    height: 100%;
+    border-right: 1px solid var(--bg-black-50);
+    display: flex;
+    flex-direction: column; /* Stack logo and nav vertically */
+    align-items: flex-start; /* Align to the left */
+    z-index: 10;
+    transition: all 0.3s ease
+}
+
+.sidebar .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    display: inline-block;
+}
+
+.sidebar .logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+.sidebar .logo a {
+    position: relative; /* Ensures pseudo-elements position relative to this */
+    display: inline-block;
+}
+
+.sidebar .logo a::before,
+.sidebar .logo a::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 5px solid #1fb87d;
+}
+
+.sidebar .logo a::before {
+    top: -5px;
+    left: -5px;
+    border-bottom: none;
+    border-right: none;
+}
+
+.sidebar .logo a::after {
+    bottom: -5px;
+    right: -5px;
+    border-top: none;
+    border-left: none;
+}
+
+
+.sidebar .nav {
+    margin-top: 20px; /* Ensures nav starts below the logo */
+    width: 100%; /* Full width for better spacing */
+}
+
+.sidebar .nav li a
+{
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-black-50);
+    color: var(--text-black-900);
+    padding: 5px 15px;
+}
+
+/* Navigation Bar Styles */
+.sidebar .nav li {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar .nav li {
+    margin: 15px 0;
+}
+
+.sidebar .nav li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 12px 20px;
+    background-color: #444;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 120px;
+    height: auto;
+}
+
+
+.sidebar .nav li a:hover {
+    background-color: #555; /* Slightly darker on hover */
+}
+
+/* Main Content Area */
+main {
+    margin-left: 250px; /* Offset the content for the sidebar */
+    padding: 20px;
+    padding-top: 50px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease; /* Smooth transition for content on toggle */
+}
+
+/* Section Styles */
+section {
+    padding: 50px 20px;
+    margin: 0; /* Reset margin to prevent spacing between sections */
+    min-height: 100vh; /* Ensure sections are full height */
+    opacity: 0; /* Hidden by default */
+    transform: translateY(50px); /* Start off-screen */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+}
+
+/* Slide-in Effect for when the section becomes visible */
+section.is-visible {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Slide into place */
+}
+
+/* Different Background Colors for Each Section */
+#home {
+    background-color: #444;
+    opacity: 0; /* Make visible */
+    transform: translateY(0);
+    /* z-index: 1;
+    position: relative;
+    height: 100vh; */
+}
+
+#about {
+    background-color: #e0e0e0;
+    opacity: 0; /* Make visible */
+    transform: translateY(0);
+}
+
+#portfolio {
+    background-color: #d0d0d0;
+    opacity: 0; /* Make visible */
+    transform: translateY(0);
+}
+
+#contact {
+    background-color: #c0c0c0;
+    opacity: 0; /* Make visible */
+    transform: translateY(0);
+}
+
+/* Footer Styles
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+} */
+
+/* Smooth Scrolling for Anchor Links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Stack the sidebar and main content vertically */
+    }
+
+    .aside {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Let the sidebar height adjust */
+        position: relative; /* Allow it to scroll with the page */
+        display: none; /* Hide sidebar by default */
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    /* Show sidebar when toggled */
+    .aside.active {
+        display: block;
+    }
+}
