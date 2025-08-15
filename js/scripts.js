@@ -49,3 +49,17 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial call to show the section based on the current URL hash
     showSection();
 });
+
+
+window.onload = function () {
+    const img = document.getElementById("swap-img");
+    const images = ["/images/hello.png", "/images/cringe.jpg"];
+  
+    setTimeout(() => {
+      img.src = images[1];     // Change to second image
+      img.width = 188;         // Optional: resize it too
+    }, 3000); // 3000ms = 3 seconds
+  };
+
+
+  

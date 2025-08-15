@@ -1,210 +1,234 @@
+:root {
+  --accent-color: #15dceb; /* Bright teal */
+  --accent-color-rgb: 21, 220, 235; /* RGB for box-shadow */
+}
+
+/* Reset & Base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex; /* Flexbox to create a layout */
-    min-height: 100vh; /* Ensures the body takes at least the full height */
+  font-family: 'Poppins', sans-serif; /* Like connect */
+  line-height: 1.6;
+  background-color: #0a0a0a; /* Dark background */
+  color: #eee; /* Light text */
+  display: flex;
+  min-height: 100vh;
 }
 
-/* Sidebar Styles */
+/* Sidebar */
 .sidebar {
-    width: 270px;
-    background: var(--bg-black-100);
-    position: relative;
-    left: 0;
-    top: 0;
-    padding: 100px 30px 30px; /* Added top padding to prevent overlap */
-    height: 100%;
-    border-right: 1px solid var(--bg-black-50);
-    display: flex;
-    flex-direction: column; /* Stack logo and nav vertically */
-    align-items: flex-start; /* Align to the left */
-    z-index: 10;
-    transition: all 0.3s ease
+  width: 220px;
+  background: #111; /* Darker background */
+  padding: 120px 20px 30px;
+  height: 100vh;
+  border-right: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed; /* Fix sidebar on scroll */
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: background-color 0.3s ease;
 }
 
 .sidebar .logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 10px;
-    display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  padding: 10px;
+  display: inline-block;
 }
 
 .sidebar .logo img {
-    width: 120px;
-    height: auto;
-    display: block;
+  width: 180px;
+  height: 80px; /* fixed height, might stretch/distort */
+  object-fit: fill;
+  display: block;
+  filter: drop-shadow(0 0 3px var(--accent-color));
 }
 
 .sidebar .logo a {
-    position: relative; /* Ensures pseudo-elements position relative to this */
-    display: inline-block;
+  position: relative; /* Needed for pseudo-elements */
+  display: inline-block;
 }
 
+/* Top-left corner border */
 .sidebar .logo a::before,
 .sidebar .logo a::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 5px solid #1fb87d;
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--accent-color); /* Bright teal */
+  pointer-events: none;
+  border-radius: 4px;
 }
 
 .sidebar .logo a::before {
-    top: -5px;
-    left: -5px;
-    border-bottom: none;
-    border-right: none;
+  top: -6px;
+  left: -6px;
+  border-bottom: none;
+  border-right: none;
 }
 
+/* Bottom-right corner border */
 .sidebar .logo a::after {
-    bottom: -5px;
-    right: -5px;
-    border-top: none;
-    border-left: none;
+  bottom: -6px;
+  right: -6px;
+  border-top: none;
+  border-left: none;
 }
-
 
 .sidebar .nav {
-    margin-top: 20px; /* Ensures nav starts below the logo */
-    width: 100%; /* Full width for better spacing */
-}
-
-.sidebar .nav li a
-{
-    font-size: 16px;
-    font-weight: 600;
-    display: block;
-    border-bottom: 1px solid var(--bg-black-50);
-    color: var(--text-black-900);
-    padding: 5px 15px;
-}
-
-/* Navigation Bar Styles */
-.sidebar .nav li {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
+  margin-top: 10px;
+  width: 100%;
 }
 
 .sidebar .nav li {
-    margin: 15px 0;
+  list-style: none;
+  margin: 15px 0;
 }
 
 .sidebar .nav li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    padding: 12px 20px;
-    background-color: #444;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    width: 120px;
-    height: auto;
+  font-weight: 600;
+  font-size: 16px; /* smaller font */
+  color: var(--accent-color);
+  text-decoration: none;
+  padding: 10px 18px; /* slightly smaller padding */
+  display: block;
+  border-radius: 8px;
+  background-color: #222;
+  box-shadow: 0 0 6px rgba(21, 220, 235, 0.15); /* slightly smaller shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-
-.sidebar .nav li a:hover {
-    background-color: #555; /* Slightly darker on hover */
+.sidebar .nav li a:hover,
+.sidebar .nav li a:focus {
+  background-color: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 12px rgba(21, 220, 235, 0.6); /* adjusted shadow on hover */
 }
 
-/* Main Content Area */
+/* Main content area */
 main {
-    margin-left: 250px; /* Offset the content for the sidebar */
-    padding: 20px;
-    padding-top: 50px;
-    flex-grow: 1;
-    transition: margin-left 0.3s ease; /* Smooth transition for content on toggle */
+  margin-left: 220px;
+  padding: 50px 40px 40px;
+  flex-grow: 1;
+  background-color: #121212;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+  color: #ddd;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-/* Section Styles */
+/* Section styles */
 section {
-    padding: 50px 20px;
-    margin: 0; /* Reset margin to prevent spacing between sections */
-    min-height: 100vh; /* Ensure sections are full height */
-    opacity: 0; /* Hidden by default */
-    transform: translateY(50px); /* Start off-screen */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  padding: 60px 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 15px rgba(21, 220, 235, 0.1);
+  opacity: 1;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* Slide-in Effect for when the section becomes visible */
 section.is-visible {
-    opacity: 1; /* Make visible */
-    transform: translateY(0); /* Slide into place */
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Different Background Colors for Each Section */
+/* Specific section colors (optional) */
 #home {
-    background-color: #444;
-    opacity: 0; /* Make visible */
-    transform: translateY(0);
-    /* z-index: 1;
-    position: relative;
-    height: 100vh; */
+  background-color: #242424;
 }
 
 #about {
-    background-color: #e0e0e0;
-    opacity: 0; /* Make visible */
-    transform: translateY(0);
+  background-color: #242424;
 }
 
 #portfolio {
-    background-color: #d0d0d0;
-    opacity: 0; /* Make visible */
-    transform: translateY(0);
+  background-color: #242424;
 }
 
 #contact {
-    background-color: #c0c0c0;
-    opacity: 0; /* Make visible */
-    transform: translateY(0);
+  background-color: #242424;
 }
 
-/* Footer Styles
+/* Section headings */
+section h1,
+section h2 {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Paragraphs */
+section p {
+  color: #ccc;
+  font-size: 1rem;
+  max-width: 700px;
+}
+
+/* Footer */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-} */
-
-/* Smooth Scrolling for Anchor Links */
-html {
-    scroll-behavior: smooth;
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 20px;
 }
 
-/* Mobile Responsiveness */
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive for smaller screens */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column; /* Stack the sidebar and main content vertically */
-    }
+  body {
+    flex-direction: column;
+  }
 
-    .aside {
-        width: 100%; /* Full width on small screens */
-        height: auto; /* Let the sidebar height adjust */
-        position: relative; /* Allow it to scroll with the page */
-        display: none; /* Hide sidebar by default */
-    }
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
-    main {
-        margin-left: 0;
-    }
+  .sidebar .logo {
+    position: static;
+    padding: 0;
+  }
 
-    /* Show sidebar when toggled */
-    .aside.active {
-        display: block;
-    }
+  .sidebar .nav {
+    display: flex;
+    margin-top: 0;
+    width: auto;
+  }
+
+  .sidebar .nav li {
+    margin: 0 10px;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  section {
+    padding: 40px 20px;
+    margin-bottom: 30px;
+  }
 }

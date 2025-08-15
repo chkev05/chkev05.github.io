@@ -1,0 +1,132 @@
+/* Global Resets - keep globally */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.homepage {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.homepage-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  gap: 40px;
+}
+
+/* Content section styling */
+.homepage-content {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+/* Heading */
+.homepage-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #15dceb;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+/* Subtitle */
+.homepage-intro {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ccc;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* Bio paragraph */
+.homepage-bio {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ddd;
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+
+/* Image styling */
+.homepage-image img {
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(21, 220, 235, 0.3);
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.homepage-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(21, 220, 235, 0.5);
+}
+
+/* Resume Button */
+.resume-button {
+  background-color: #15dceb;
+  color: #fff;
+  padding: 12px 18px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  max-width: 160px;
+  margin-left: auto;
+  margin-bottom: 30px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(21, 220, 235, 0.4);
+}
+
+.resume-button:hover,
+.resume-button:focus {
+  background-color: #13b2cc;
+  box-shadow: 0 6px 15px rgba(19, 178, 204, 0.6);
+  outline: none;
+}
+
+@keyframes flip-horizontal {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+/* Apply the flip animation */
+.homepage-image img {
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(21, 220, 235, 0.3);
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  transition: box-shadow 0.3s ease;
+  animation: flip-horizontal 10s ease-in-out 1;
+}
+
+.homepage-image img:hover {
+  animation-play-state: paused;
+  box-shadow: 0 6px 20px rgba(21, 220, 235, 0.5);
+}

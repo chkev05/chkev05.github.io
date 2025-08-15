@@ -1,0 +1,246 @@
+/* Global Resets - OK to keep globally */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Unique About Page Body Styling */
+body.about-me {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Unique Wrapper */
+.wrapper_aboutme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Remove block styling and make the intro feel inline */
+.wrapper_aboutme .aboutme-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+/* Name heading */
+.wrapper_aboutme .name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #15dceb;
+    margin-bottom: 8px;
+}
+
+/* Intro subtitle */
+.wrapper_aboutme .intro {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+/* Bio paragraph */
+.wrapper_aboutme .bio {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Resume button stays aligned to the right */
+.wrapper_aboutme .resume-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Resume Button */
+.wrapper_aboutme .resume-button {
+    background-color: #15dceb;
+    color: #fff;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    max-width: 150px;
+    width: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 25px;
+}
+
+.wrapper_aboutme .resume-button:hover {
+    background-color: #13b2cc;
+}
+
+/* Info Section */
+.wrapper_aboutme .info-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+}
+
+
+/* Two-column layout for personal-info */
+.wrapper_aboutme .personal-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 15px 40px; /* row gap 15px, column gap 40px */
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+/* Style individual info items */
+.wrapper_aboutme .personal-info p {
+    background-color: #111;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(21, 220, 235, 0.3);
+    color: #15dceb;
+    word-wrap: break-word;
+}
+
+/* Adjust links (Github, LinkedIn) for clickable style */
+.wrapper_aboutme .personal-info p a {
+    color: #15dceb;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.wrapper_aboutme .personal-info p a:hover {
+    color: #13b2cc;
+    text-decoration: none;
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 600px) {
+    .wrapper_aboutme .personal-info {
+        grid-template-columns: 1fr; /* stack items */
+    }
+}
+
+/* Hire me button for pesronal info */
+.hire-button {
+    display: inline-block;
+    background-color: #15dceb;
+    color: #000 !important;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(21, 220, 235, 0.5);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hire-button:hover {
+    background-color: #13b2cc;
+    color: #000 !important;
+}
+/* Optional: Make sure the button cell aligns nicely */
+.personal-info .hire-me {
+  /* This will place it in the second column under Majors */
+  grid-column: 1 / -1; 
+  justify-self: center; /* aligns button to center grid cell */
+  display: flex;
+  justify-content: center;
+}
+
+
+.wrapper_aboutme .info-columns {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.wrapper_aboutme .education,
+.wrapper_aboutme .experience {
+    flex: 1;
+    min-width: 300px;
+}
+
+.wrapper_aboutme .education h2,
+.wrapper_aboutme .experience h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #15dceb;
+    padding-bottom: 5px;
+}
+
+.wrapper_aboutme .job ul,
+.wrapper_aboutme .school ul {
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.wrapper_aboutme .school,
+.wrapper_aboutme .job {
+    background-color: #111;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(21, 220, 235, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wrapper_aboutme .school:hover,
+.wrapper_aboutme .job:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(21, 220, 235, 0.25);
+}
+
+.wrapper_aboutme .school h3,
+.wrapper_aboutme .job h3 {
+    color: #15dceb;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.wrapper_aboutme .school p,
+.wrapper_aboutme .job p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #ccc;
+}
+
+.wrapper_aboutme .school ul li,
+.wrapper_aboutme .job ul li {
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+.wrapper_aboutme .education h2::after,
+.wrapper_aboutme .experience h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #15dceb;
+    margin-top: 5px;
+    transition: width 0.3s ease;
+}
+
+.wrapper_aboutme .education:hover h2::after,
+.wrapper_aboutme .experience:hover h2::after {
+    width: 80px;
+}

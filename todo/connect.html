@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connect</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="connect.css" />
+</head>
+<body class="connect">
+  <div class="wrapper_connect">
+    <div class="connect-container">
+      <h1 class="connect-title">Connect with Me</h1>
+
+        <p class="connect-subtitle">
+            Have a question or want to get in touch?
+            <span class="connect-subtext">Feel free to reach out</span>
+        </p>
+
+      <!-- Contact Options Section -->
+      <div class="connect-options" style="margin-bottom: 40px;">
+        <div class="connect-card">
+          <i class="fas fa-phone"></i>
+          <h3>Phone</h3>
+          <p>(123) 456-7890</p>
+        </div>
+        <div class="connect-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p><a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        </div>
+        <div class="connect-card">
+          <i class="fab fa-linkedin"></i>
+          <h3>LinkedIn</h3>
+          <p><a href="https://linkedin.com/in/yourprofile" target="_blank">/yourprofile</a></p>
+        </div>
+      </div>
+
+        <p class="connect-subtitle">
+            Send me a message
+            <br />
+            <span class="connect-subtext">Let’s chat soon</span>
+        </p>
+
+      <!-- Main Contact Form -->
+      <form class="contact-form" action="#" method="POST" style="margin-bottom: 30px;">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <!-- Fallback Contact Info -->
+      <div class="contact-info">
+        <p>You can also reach me directly at 
+          <a href="mailto:youremail@example.com">youremail@example.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="../js/scripts.js"></script>
+</body>
+</html>

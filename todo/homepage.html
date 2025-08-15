@@ -5,20 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kevin's Homepage</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="homepage.css">
 </head>
-<body>
-  <div class="wrapper">
-    <div class="container">
-      <h1 class="name">Hi, I'm Kevin Chen</h1>
-      <p class="intro">I'm a Software Engineer</p>
-      <p class="bio">I’m a recent graduate from the University of Michigan, currently looking for my first Software Engineering job. I have experience in operating systems, databases, and full-stack web development, and I’m excited to connect with you all!</p>
-      <a href="/path-to-your-resume.pdf" class="resume-button" target="_blank">View Resume</a>
+<body class="homepage">
+  <div class="homepage-wrapper">
+    <div class="homepage-content">
+      <h1 class="homepage-name">Hi, I'm Kevin Chen</h1>
+      <p class="homepage-intro">I'm a Software Engineer</p>
+      <p class="homepage-bio">
+        I’m a recent graduate from the University of Michigan, currently looking for my first Software Engineering job.
+        I have experience in operating systems, databases, and full-stack web development, and I’m excited to connect with you all!
+      </p>
+      <a href="https://drive.google.com/file/d/1hxI-1bXSt4aOn-3JGef8YAI7oKfV3trU/view?usp=sharing" class="resume-button" target="_blank">View Resume</a>
     </div>
-    <div class="image">
-      <!-- Replace with your actual image -->
-      <img src="/images/hello.png" alt="Kevin's picture">
+    <div class="homepage-image">
+      <img id="swap-img" src="/images/hello.png" alt="Kevin's picture" width="250" height="250">
     </div>
   </div>
+
+  <script src="../js/scripts.js"></script>
 </body>
 </html>

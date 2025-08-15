@@ -1,0 +1,101 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px; /* Make the container a bit smaller */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+}
+
+.name {
+    font-size: 2rem; /* Smaller font size */
+    font-weight: 700; /* Bold */
+    color: #15dceb; /* Blue color for emphasis */
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.intro {
+    font-size: 1.6rem; /* Smaller font size */
+    color: #15dceb;
+    font-weight: 600; /* Bold */
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.bio {
+    font-size: 0.7rem; /* Smaller font size */
+    line-height: 1.5;
+    text-align: left; /* Left-align bio */
+    max-width: 400px; /* Limit the text width for better readability */
+    margin-top: 10px;
+}
+
+.image {
+    margin-left: 20px; /* Space between text and image */
+}
+
+/* Optional: Add a max-width for the image */
+.swap-img {
+    width: 250px;
+    height: 250px;
+}
+
+.cringe-img {
+    width: 188px;
+    height: 250px;
+}
+
+/* Resume Button */
+/* Resume Button */
+.resume-button {
+  background-color: #15dceb;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  margin-top: 40px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  max-width: 150px; /* Smaller max-width */
+  width: auto;
+  text-align: center;
+  margin-left: 250px;
+  margin-bottom: 25px;
+}
+
+
+.resume-button:hover {
+    background-color: #13b2cc; /* Darker blue on hover */
+}

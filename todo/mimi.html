@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Mimi</title>
+  <link rel="stylesheet" href="mimi.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+      .play-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #15dceb;
+      color: #000;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      z-index: 999;
+    }
+  </style>
+
+</head>
+<body class="mimi-body">
+  <div class="mimi-wrapper">
+    <div class="mimi-container">
+
+      <h1 class="mimi-title">About Me</h1>
+
+      <div class="mimi-section-list">
+
+        <!-- Intro -->
+        <div class="mimi-card">
+          <div class="mimi-icon">
+            <i class="fas fa-user"></i>
+          </div>
+          <h2>Who I Am</h2>
+          <p>
+            I'm Mimi — a creative developer who loves turning ideas into interactive web experiences. With a background in design and a passion for clean code, I bridge the gap between aesthetic and logic.
+          </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="mimi-card">
+          <div class="mimi-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h2>Skills</h2>
+          <p>
+            HTML, CSS (SASS), JavaScript, React, GSAP, Node, Git, UI/UX Design, and more. Always exploring new ways to enhance creativity through code.
+          </p>
+        </div>
+
+        <!-- Values or Goals -->
+        <div class="mimi-card">
+          <div class="mimi-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h2>What Drives Me</h2>
+          <p>
+            I believe in meaningful design, intuitive interfaces, and building tools that empower people. I’m always striving to learn and grow, both personally and professionally.
+          </p>
+        </div>
+
+        <!-- Contact -->
+        <div class="mimi-card">
+          <div class="mimi-icon">
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <h2>Let’s Connect</h2>
+          <p>
+            Whether it's a project idea, a collaboration, or a quick hello — reach out anytime.
+          </p>
+          <div class="mimi-link-wrapper">
+            <a href="mailto:mimi@example.com" class="mimi-link-icon" title="Email Me">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <!-- Hidden audio element -->
+  <audio id="bg-music" loop>
+    <source src="Serebro- Mi Mi Mi (Lyrics Video) (mp3cut.net).mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Play music button -->
+  <button id="music-toggle" class="play-button" onclick="toggleMusic()">
+    🎵 Play Music
+  </button>
+
+<script>
+  function createOrbs() {
+    if (document.body.classList.contains('party-mode')) {
+      ['orb1', 'orb2', 'orb3'].forEach(className => {
+        const orb = document.createElement('div');
+        orb.classList.add('floating-orb', className);
+        orb.style.left = Math.random() * window.innerWidth + 'px';
+        orb.style.top = Math.random() * window.innerHeight + 'px';
+        document.body.appendChild(orb);
+
+        setTimeout(() => orb.remove(), 15000); // Remove after 15s
+      });
+    }
+  }
+
+  setInterval(createOrbs, 3000);
+</script>
+
+ <script>
+  const music = document.getElementById('bg-music');
+  const button = document.getElementById('music-toggle');
+  const body = document.body;
+
+  music.volume = 0.2;
+
+  // Function to create floating orbs for party mode
+  function createOrb(className) {
+    const orb = document.createElement('div');
+    orb.classList.add('floating-orb', className);
+    orb.style.left = Math.random() * window.innerWidth + 'px';
+    orb.style.top = Math.random() * window.innerHeight + 'px';
+    document.body.appendChild(orb);
+    setTimeout(() => orb.remove(), 15000);
+  }
+
+  // Continuously create orbs only if party mode is active
+  let orbInterval;
+  function startOrbs() {
+    orbInterval = setInterval(() => {
+      ['orb1', 'orb2', 'orb3'].forEach(className => createOrb(className));
+    }, 3000);
+  }
+  function stopOrbs() {
+    clearInterval(orbInterval);
+    document.querySelectorAll('.floating-orb').forEach(orb => orb.remove());
+  }
+
+  // Attempt to autoplay music on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    music.play()
+      .then(() => {
+        // Autoplay succeeded, update button and start party mode
+        button.innerHTML = '⏸ Mi Mi Mi';
+        body.classList.add('party-mode');
+        startOrbs();
+      })
+      .catch(() => {
+        // Autoplay failed, button shows play and no party mode
+        button.innerHTML = '🎵 Play Music';
+        body.classList.remove('party-mode');
+        stopOrbs();
+      });
+  });
+
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+      button.innerHTML = '⏸ Mi Mi Mi';
+      body.classList.add('party-mode');
+      startOrbs();
+    } else {
+      music.pause();
+      button.innerHTML = '🎵 Play Music';
+      body.classList.remove('party-mode');
+      stopOrbs();
+    }
+  }
+</script>
+
+</body>
+</html>

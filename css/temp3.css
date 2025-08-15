@@ -1,0 +1,196 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Like connect */
+  line-height: 1.6;
+  background-color: #0a0a0a; /* Dark background */
+  color: #eee; /* Light text */
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 270px;
+  background: #111; /* Darker background */
+  padding: 120px 30px 30px;
+  height: 100vh;
+  border-right: 1px solid #222;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed; /* Fix sidebar on scroll */
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar .logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.sidebar .logo img {
+  width: 140px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 3px #15dceb);
+}
+
+.sidebar .nav {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.sidebar .nav li {
+  list-style: none;
+  margin: 15px 0;
+}
+
+.sidebar .nav li a {
+  font-weight: 600;
+  font-size: 18px;
+  color: #15dceb;
+  text-decoration: none;
+  padding: 12px 25px;
+  display: block;
+  border-radius: 8px;
+  background-color: #222;
+  box-shadow: 0 0 8px rgba(21, 220, 235, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar .nav li a:hover,
+.sidebar .nav li a:focus {
+  background-color: #15dceb;
+  color: #000;
+  box-shadow: 0 0 15px rgba(21, 220, 235, 0.6);
+}
+
+/* Main content area */
+main {
+  margin-left: 270px;
+  padding: 50px 40px 40px;
+  flex-grow: 1;
+  background-color: #121212;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+  color: #ddd;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Section styles */
+section {
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  padding: 60px 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 15px rgba(21, 220, 235, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Specific section colors (optional) */
+#home {
+  background-color: #222;
+}
+
+#about {
+  background-color: #1b1b1b;
+}
+
+#portfolio {
+  background-color: #242424;
+}
+
+#contact {
+  background-color: #1a1a1a;
+}
+
+/* Section headings */
+section h1,
+section h2 {
+  color: #15dceb;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Paragraphs */
+section p {
+  color: #ccc;
+  font-size: 1rem;
+  max-width: 700px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .sidebar .logo {
+    position: static;
+    padding: 0;
+  }
+
+  .sidebar .nav {
+    display: flex;
+    margin-top: 0;
+    width: auto;
+  }
+
+  .sidebar .nav li {
+    margin: 0 10px;
+  }
+
+  main {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  section {
+    padding: 40px 20px;
+    margin-bottom: 30px;
+  }
+}
