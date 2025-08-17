@@ -52,14 +52,92 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 window.onload = function () {
-    const img = document.getElementById("swap-img");
-    const images = ["/images/hello.png", "/images/cringe.jpg"];
-  
-    setTimeout(() => {
-      img.src = images[1];     // Change to second image
-      img.width = 188;         // Optional: resize it too
-    }, 3000); // 3000ms = 3 seconds
-  };
+  const img = document.getElementById("swap-img");
+  const images = ["/images/hello.png", "/images/cringe.jpg"];
+
+  if (!img) return; // ✅ Prevents crash if img not found
+
+  setTimeout(() => {
+    img.src = images[1];
+    img.width = 188;
+  }, 3000);
+};
 
 
-  
+// Accent color picker functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const gearIcon = document.querySelector('.color-icon');
+  const palette = document.getElementById('colorPalette');
+
+  console.log("Gear icon:", gearIcon); // ✅ Debug: Should not be null
+  console.log("Palette:", palette);    // ✅ Debug: Should not be null
+
+  gearIcon.addEventListener('click', () => {
+    palette.classList.toggle('hidden');
+  });
+
+  palette.addEventListener('click', (e) => {
+    if (e.target.classList.contains('color-swatch')) {
+      const selectedColor = e.target.getAttribute('data-color');
+
+      // Update CSS variable --accent-color
+      document.documentElement.style.setProperty('--accent-color', selectedColor);
+
+      // Update --accent-color-rgb
+      const rgb = hexToRgb(selectedColor);
+      if (rgb) {
+        document.documentElement.style.setProperty('--accent-color-rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`);
+      }
+
+      palette.classList.add('hidden');
+    }
+  });
+
+  // Close palette if clicking outside
+  document.addEventListener('click', (e) => {
+    if (!gearIcon.contains(e.target) && !palette.contains(e.target)) {
+      palette.classList.add('hidden');
+    }
+  });
+
+  // Helper function for hex to rgb
+  function hexToRgb(hex) {
+    hex = hex.replace(/^#/, '');
+    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+    if (hex.length !== 6) return null;
+
+    const bigint = parseInt(hex, 16);
+    return {
+      r: (bigint >> 16) & 255,
+      g: (bigint >> 8) & 255,
+      b: bigint & 255
+    };
+  }
+});
+
+// Function to toggle between light and dark mode
+function initThemeToggle() {
+  const themeButton = document.querySelector('.theme-button');
+  const icon = themeButton.querySelector('i');
+
+  if (!themeButton || !icon) return;
+
+  // Apply saved theme preference
+  if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light-mode');
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  }
+
+  // Toggle on button click
+  themeButton.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light-mode');
+
+    icon.classList.toggle('fa-moon', !isLight);
+    icon.classList.toggle('fa-sun', isLight);
+
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initThemeToggle);

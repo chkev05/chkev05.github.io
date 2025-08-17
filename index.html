@@ -6,6 +6,10 @@
     <title>Your Name's Website</title>
     <!-- ===== CSS Files ===== -->
     <link rel="stylesheet" href="css/styles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 </head>
 
 <body>
@@ -28,20 +32,58 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
 
+        <!-- ===== Color Picker Start ===== -->
         <div class="color-picker">
-            <label for="accentColor">Choose Accent Color:</label>
+            <!-- <label for="accentColor">Choose Accent Color:</label> -->
             <input type="color" id="accentColor" name="accentColor" value="#15dceb">
+              <div class="color-icon-wrapper">
+                <label class="color-icon">⚙️</label>
+              </div>
+
+            <div id="colorPalette" class="color-palette hidden">
+                <div class="color-swatch" data-color="#ff0000" style="background:#ff0000"></div>
+                <div class="color-swatch" data-color="#00ff00" style="background:#00ff00"></div>
+                <div class="color-swatch" data-color="#0000ff" style="background:#0000ff"></div>
+                <div class="color-swatch" data-color="#15dceb" style="background:#15dceb"></div>
+                <div class="color-swatch" data-color="#ffa500" style="background:#ffa500"></div>
+            </div>
+
         </div>
+        <!-- ===== Color Picker End ===== -->
+
+        <!-- ===== Theme Picker Start ===== -->
+        <div class="theme">
+            <button class="theme-button" title="toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        <!-- ===== Theme Picker Start ===== -->
+
+
     </aside>
     <!-- ===== Navigation Menu End ===== -->
 
     <!-- ===== Main Content Start ===== -->
     <main>
-        <!-- Home Section -->
+        <!-- Home Section Start -->
         <section id="home">
-            <h1>Welcome to My Website</h1>
-            <p>This is the home section of your personal website.</p>
+
+            <div class="homepage-wrapper">
+                <div class="homepage-content">
+                    <h1 class="homepage-name">Hi, I'm Kevin Chen</h1>
+                    <p class="homepage-intro">I'm a Software Engineer</p>
+                    <p class="homepage-bio">
+                        I’m a recent graduate from the University of Michigan, currently looking for my first Software Engineering job.
+                        I have experience in operating systems, databases, and full-stack web development, and I’m excited to connect with you all!
+                    </p>
+                    <a href="https://drive.google.com/file/d/1hxI-1bXSt4aOn-3JGef8YAI7oKfV3trU/view?usp=sharing" class="resume-button" target="_blank">View Resume</a>
+                </div>
+                <div class="homepage-image">
+                    <img id="swap-img" src="/images/hello.png" alt="Kevin's picture" width="250" height="250">
+                </div>
+            </div>
         </section>
+        <!-- Home Section End -->
 
         <!-- About Me Section -->
         <section id="about">
@@ -61,48 +103,13 @@
             <p>Provide a way for people to get in touch with you—email, social media links, etc.</p>
         </section>
 
-        <footer>
+        <!-- <footer>
             <p>Created by Your Name</p>
-        </footer>
+        </footer> -->
     </main>
     <!-- ===== Main Content End ===== -->
 
     <script src="js/scripts.js"></script>
     <!-- ===== Master File End ===== -->
-     <script>
-        const colorPicker = document.getElementById('accentColor');
-
-        colorPicker.addEventListener('input', (e) => {
-            const color = e.target.value; // e.g. "#ff0000"
-
-            // Update CSS variable --accent-color
-            document.documentElement.style.setProperty('--accent-color', color);
-
-            // Also update --accent-color-rgb (for rgba usage)
-            // Convert hex to rgb
-            const rgb = hexToRgb(color);
-            if (rgb) {
-            document.documentElement.style.setProperty('--accent-color-rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`);
-            }
-        });
-
-        // Helper function to convert hex to rgb object
-        function hexToRgb(hex) {
-            // Remove # if present
-            hex = hex.replace(/^#/, '');
-            if (hex.length === 3) {
-            hex = hex.split('').map(c => c + c).join('');
-            }
-            if (hex.length !== 6) {
-            return null;
-            }
-            const bigint = parseInt(hex, 16);
-            return {
-            r: (bigint >> 16) & 255,
-            g: (bigint >> 8) & 255,
-            b: bigint & 255
-            };
-        }
-    </script>
 </body>
 </html>
