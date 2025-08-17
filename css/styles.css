@@ -145,21 +145,7 @@ section.is-visible {
 }
 
 /* Specific section colors (optional) */
-#home {
-  background-color: #242424;
-}
 
-#about {
-  background-color: #242424;
-}
-
-#portfolio {
-  background-color: #242424;
-}
-
-#contact {
-  background-color: #242424;
-}
 
 /* Section headings */
 section h1,
@@ -490,7 +476,7 @@ body.light-mode .sidebar {
   border-right: 1px solid #ccc; /* Lighter border */
 }
 
-body.light-mode .siderbar .nav li a {
+body.light-mode .sidebar .nav li a {
   background-color: #eee;
   color: #0077b6; /* Darker text for contrast */
   box-shadow: 0 0 6px rgba(0, 119, 182, 0.15);
@@ -508,8 +494,15 @@ body.light-mode main {
   color: #222;
 }
 
+body.dark-mode section {
+  background-color: #1c1c1c;
+  color: #fff;
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); */
+}
+
 body.light-mode section {
   background-color: #fff;
+  color: #111;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }
 
