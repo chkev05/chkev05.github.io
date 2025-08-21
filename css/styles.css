@@ -157,7 +157,7 @@ section h2 {
 
 /* Paragraphs */
 section p {
-  color: #ccc;
+  /* color: #ccc; */
   font-size: 1rem;
   max-width: 700px;
 }
@@ -330,7 +330,9 @@ html {
   color: #eee;
 }
 
-/* Homepage Styling */
+/* ============================================================
+   ================ HOMEPAGE STYLING START ====================
+   ============================================================ */
 /* Global Resets - keep globally */
 * {
   margin: 0;
@@ -341,7 +343,7 @@ html {
 #home {
   font-family: 'Poppins', sans-serif;
   /* background-color: #000; */
-  color: #fff;
+  color: var(--accent-color);
   padding: 20px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -370,7 +372,7 @@ html {
 .homepage-name {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #15dceb;
+  color: var(--accent-color);
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
@@ -412,7 +414,7 @@ html {
 
 /* Resume Button */
 .resume-button {
-  background-color: #15dceb;
+  background-color: var(--accent-color);
   color: #fff;
   padding: 12px 18px;
   font-size: 1.1rem;
@@ -431,7 +433,7 @@ html {
 
 .resume-button:hover,
 .resume-button:focus {
-  background-color: #13b2cc;
+  background-color: var(--accent-color);
   box-shadow: 0 6px 15px rgba(19, 178, 204, 0.6);
   outline: none;
 }
@@ -464,6 +466,269 @@ html {
   box-shadow: 0 6px 20px rgba(21, 220, 235, 0.5);
 }
 
+/* ============================================================
+   ================ HOMEPAGE STYLING END ======================
+   ============================================================ */
+
+
+/* ============================================================
+   ================ ABOUT ME STYLING START ====================
+   ============================================================ */
+
+
+   /* Global Resets - OK to keep globally */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Unique About Page Body Styling */
+body.about-me {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Unique Wrapper */
+.wrapper_aboutme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Remove block styling and make the intro feel inline */
+.wrapper_aboutme .aboutme-container {
+    align-self: flex-start;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Name heading */
+.wrapper_aboutme .name {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+}
+
+/* Intro subtitle */
+.wrapper_aboutme .intro {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* Bio paragraph */
+.wrapper_aboutme .bio {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Resume button stays aligned to the right */
+.wrapper_aboutme .resume-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Resume Button */
+.wrapper_aboutme .resume-button {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    max-width: 150px;
+    width: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 25px;
+}
+
+.wrapper_aboutme .resume-button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Info Section */
+.wrapper_aboutme .info-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Two-column layout for personal-info */
+.wrapper_aboutme .personal-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 15px 40px; /* row gap 15px, column gap 40px */
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+/* Style individual info items */
+.wrapper_aboutme .personal-info p {
+    background-color: #111;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 0 8px rgba(21, 220, 235, 0.3);
+    color: var(--accent-color);
+    word-wrap: break-word;
+}
+
+/* Adjust links (Github, LinkedIn) for clickable style */
+.wrapper_aboutme .personal-info p a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.wrapper_aboutme .personal-info p a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 600px) {
+    .wrapper_aboutme .personal-info {
+        grid-template-columns: 1fr; /* stack items */
+    }
+}
+
+/* Hire me button for personal info */
+.hire-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #000 !important;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(21, 220, 235, 0.5);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hire-button:hover {
+    background-color: var(--accent-color);
+    color: #000 !important;
+}
+
+/* Optional: Make sure the button cell aligns nicely */
+.personal-info .hire-me {
+  /* This will place it in the second column under Majors */
+  grid-column: 1 / -1; 
+  justify-self: center; /* aligns button to center grid cell */
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper_aboutme .info-columns {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.wrapper_aboutme .education,
+.wrapper_aboutme .experience {
+    flex: 1;
+    min-width: 300px;
+}
+
+.wrapper_aboutme .education h2,
+.wrapper_aboutme .experience h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+}
+
+.wrapper_aboutme .job ul,
+.wrapper_aboutme .school ul {
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.wrapper_aboutme .school,
+.wrapper_aboutme .job {
+    background-color: #111;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(21, 220, 235, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wrapper_aboutme .school:hover,
+.wrapper_aboutme .job:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(21, 220, 235, 0.25);
+}
+
+.wrapper_aboutme .school h3,
+.wrapper_aboutme .job h3 {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.wrapper_aboutme .school p,
+.wrapper_aboutme .job p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.wrapper_aboutme .school ul li,
+.wrapper_aboutme .job ul li {
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+.wrapper_aboutme .education h2::after,
+.wrapper_aboutme .experience h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+    margin-top: 5px;
+    transition: width 0.3s ease;
+}
+
+.wrapper_aboutme .education:hover h2::after,
+.wrapper_aboutme .experience:hover h2::after {
+    width: 80px;
+}
+
+
+
+/* ============================================================
+   ================ ABOUT ME STYLING END ======================
+   ============================================================ */
+
+
+
 /* Light Mode styling */
 
 body.light-mode {
@@ -478,13 +743,13 @@ body.light-mode .sidebar {
 
 body.light-mode .sidebar .nav li a {
   background-color: #eee;
-  color: #0077b6; /* Darker text for contrast */
+  color: var(--accent-color); /* Darker text for contrast */
   box-shadow: 0 0 6px rgba(0, 119, 182, 0.15);
 }
 
 body.light-mode .sidebar .nav li a:hover,
 body.light-mode .sidebar .nav li a:focus {
-  background-color: #0077b6;
+  background-color: var(--accent-color);
   color: #fff;
   box-shadow: 0 0 12px rgba(0, 119, 182, 0.6);
 }
@@ -508,7 +773,7 @@ body.light-mode section {
 
 body.light-mode section h1,
 body.light-mode section h2 {
-  color: #0077b6;
+  color: var(--accent-color);
 }
 
 body.light-mode section p {
@@ -522,4 +787,17 @@ body.light-mode footer {
 
 body.light-mode .theme-button i.fas.fa-sun {
   color: #333;
+}
+
+body.light-mode .wrapper_aboutme .personal-info p,
+body.light-mode .wrapper_aboutme .school,
+body.light-mode .wrapper_aboutme .job {
+  background-color: #fff;
+  color: var(--accent-color);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .wrapper_aboutme .school ul li,
+body.light-mode .wrapper_aboutme .job ul li {
+  color: #555;
 }
