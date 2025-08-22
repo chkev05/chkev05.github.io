@@ -10,6 +10,21 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+        .play-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #15dceb;
+            color: #000;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 999;
+        }
+    </style>
 </head>
 
 <body>
@@ -146,14 +161,14 @@
         </section>
         <!-- About Me Section End -->
 
-        <!-- Portfolio Section -->
+        <!-- Portfolio Section Start -->
         <section id="portfolio">
 
             <div class="wrapper_projects">
                 <div class="projects-container">
                     <h1 class="projects-title">Projects</h1>
                     <div class="project-list">
-                        <div class="project-item">
+                        <!-- <div class="project-item">
                             <i class="fas fa-globe project-icon"></i>
                             <h2>Project 1: Web Application</h2>
                             <p>A full-stack web application built with React and Node.js.</p>
@@ -162,7 +177,8 @@
                                     <i class="fas fa-eye"></i>
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
+                    
                     <div class="project-list">
                         <div class="project-item">
                             <i class="fas fa-cogs project-icon"></i>
@@ -224,12 +240,115 @@
                 </div>
             </div>
         </section>
+        <!-- Portfolio Section End -->
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Provide a way for people to get in touch with you—email, social media links, etc.</p>
+        <section id="mimi">
+            <div class="mimi-wrapper">
+                <div class="mimi-container">
+                    <h1 class="mimi-title">About Me</h1>
+
+                    <div class="mimi-section-list">
+                        <!-- Intro -->
+                        <div class="mimi-card">
+                            <div class="mimi-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h2>Who I Am</h2>
+                            <p>
+                                I'm Kevin — a creative developer who loves turning ideas into interactive web experiences. With a background in design and a passion for clean code, I bridge the gap between aesthetic and logic.
+                            </p>
+                        </div>
+
+                        <!-- Skills -->
+                        <div class="mimi-card">
+                            <div class="mimi-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h2>Skills</h2>
+                            <p>
+                                HTML, CSS (SASS), JavaScript, React, GSAP, Node, Git, UI/UX Design, and more. Always exploring new ways to enhance creativity through code.
+                            </p>
+                        </div>
+
+                        <!-- Values or Goals -->
+                        <div class="mimi-card">
+                            <div class="mimi-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h2>What Drives Me</h2>
+                            <p>
+                                I believe in meaningful design, intuitive interfaces, and building tools that empower people. I’m always striving to learn and grow, both personally and professionally.
+                            </p>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="mimi-card">
+                            <div class="mimi-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <h2>Let’s Connect</h2>
+                            <p>
+                                Whether it's a project idea, a collaboration, or a quick hello — reach out anytime.
+                            </p>
+                            <div class="mimi-link-wrapper">
+                                <a href="connect.html" class="mimi-link-icon" target="_blank" title="Connect with Me">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- Contact Section Start -->
+        <section id="contact">
+            <div class="wrapper_connect">
+                <h1 class="connect-title">Connect with Me</h1>
+                <p class="connect-subtitle">
+                    Have a question or want to get in touch?
+                    <span class="connect-subtext">Feel free to reach out</span>
+                </p>
+
+                <div class="connect-options" style="margin-bottom: 40px;">
+                    <div class="connect-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>(123) 456-7890</p>
+                    </div>
+                    <div class="connect-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:chkev@umich.edu">chkev@umich.edu</a></p>
+                    </div>
+                    <div class="connect-card">
+                        <i class="fab fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://linkedin.com/in/kevin-chen-127a64524643214213" target="_blank">/kevin-chen-127a64524643214213</a></p>
+                    </div>
+                </div>
+
+                <p class="connect-subtitle">
+                    Send me a message
+                    <br />
+                    <span class="connect-subtext">Let’s chat soon</span>
+                </p>
+
+                <form class="contact-form" action="#" method="POST" style="margin-bottom: 30px;">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+
+                <div class="contact-info">
+                    <p>You can also reach me directly at 
+                        <a href="mailto:chkev@umich.edu">chkev@umich.edu</a>
+                    </p>
+                </div> 
+            </div>
+        </section>
+        <!-- Contact Section End -->
 
         <!-- <footer>
             <p>Created by Your Name</p>
@@ -238,6 +357,96 @@
     <!-- ===== Main Content End ===== -->
 
     <script src="js/scripts.js"></script>
+
+    <!-- Hidden audio element -->
+    <audio id="bg-music" loop>
+        <source src="Serebro- Mi Mi Mi (Lyrics Video) (mp3cut.net).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Play music button -->
+    <button id="music-toggle" class="play-button" onclick="toggleMusic()">
+        🎵 Play Music
+    </button>
+
+    <script>
+        function createOrbs() {
+            if (document.body.classList.contains('party-mode')) {
+            ['orb1', 'orb2', 'orb3'].forEach(className => {
+                const orb = document.createElement('div');
+                orb.classList.add('floating-orb', className);
+                orb.style.left = Math.random() * window.innerWidth + 'px';
+                orb.style.top = Math.random() * window.innerHeight + 'px';
+                document.body.appendChild(orb);
+
+                setTimeout(() => orb.remove(), 15000); // Remove after 15s
+            });
+            }
+        }
+
+        setInterval(createOrbs, 3000);
+    </script>
+
+    <script>
+        const music = document.getElementById('bg-music');
+        const button = document.getElementById('music-toggle');
+        const body = document.body;
+
+        music.volume = 0.2;
+
+        // Function to create floating orbs for party mode
+        function createOrb(className) {
+            const orb = document.createElement('div');
+            orb.classList.add('floating-orb', className);
+            orb.style.left = Math.random() * window.innerWidth + 'px';
+            orb.style.top = Math.random() * window.innerHeight + 'px';
+            document.body.appendChild(orb);
+            setTimeout(() => orb.remove(), 15000);
+        }
+
+        // Continuously create orbs only if party mode is active
+        let orbInterval;
+        function startOrbs() {
+            orbInterval = setInterval(() => {
+            ['orb1', 'orb2', 'orb3'].forEach(className => createOrb(className));
+            }, 3000);
+        }
+        function stopOrbs() {
+            clearInterval(orbInterval);
+            document.querySelectorAll('.floating-orb').forEach(orb => orb.remove());
+        }
+
+        // Attempt to autoplay music on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            music.play()
+            .then(() => {
+                // Autoplay succeeded, update button and start party mode
+                button.innerHTML = '⏸ Mi Mi Mi';
+                body.classList.add('party-mode');
+                startOrbs();
+            })
+            .catch(() => {
+                // Autoplay failed, button shows play and no party mode
+                button.innerHTML = '🎵 Play Music';
+                body.classList.remove('party-mode');
+                stopOrbs();
+            });
+        });
+
+        function toggleMusic() {
+            if (music.paused) {
+            music.play();
+            button.innerHTML = '⏸ Mi Mi Mi';
+            body.classList.add('party-mode');
+            startOrbs();
+            } else {
+            music.pause();
+            button.innerHTML = '🎵 Play Music';
+            body.classList.remove('party-mode');
+            stopOrbs();
+            }
+        }
+    </script>
     <!-- ===== Master File End ===== -->
 </body>
 </html>

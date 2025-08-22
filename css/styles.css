@@ -890,6 +890,367 @@ body.projects {
    ============================================================ */
 
 
+/* ============================================================
+   ================ MIMI STYLING START ========================
+   ============================================================ */
+
+   /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body.mimi-body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+/* Wrapper and Container */
+.mimi-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mimi-container {
+  max-width: 1100px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Title */
+.mimi-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #15dceb;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Section Grid */
+.mimi-section-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 25px;
+  justify-content: center;
+}
+
+/* Individual Card */
+.mimi-card {
+  background-color: #111;
+  padding: 30px 25px 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(21, 220, 235, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 calc(33.333% - 25px);
+  max-width: 360px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.mimi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 24px rgba(21, 220, 235, 0.3);
+}
+
+/* Icon */
+.mimi-icon {
+  font-size: 3rem;
+  color: #15dceb;
+  background-color: #111;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  margin-bottom: 15px;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.mimi-card:hover .mimi-icon {
+  background-color: #15dceb;
+  box-shadow: 0 0 15px 5px #15dceb;
+  color: #000;
+}
+
+/* Card Heading and Text */
+.mimi-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #15dceb;
+  margin-bottom: 14px;
+}
+
+.mimi-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 25px;
+  max-width: 320px;
+}
+
+/* Contact Link */
+.mimi-link-wrapper {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mimi-link-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  background-color: #15dceb;
+  color: #000;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mimi-link-icon:hover {
+  background-color: #13b2cc;
+  transform: scale(1.1);
+}
+
+/* Responsive Layout */
+@media (max-width: 1023px) {
+  .mimi-card {
+    flex: 1 1 calc(50% - 25px);
+  }
+}
+
+@media (max-width: 767px) {
+  .mimi-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Container that fills the viewport */
+.gradient-wave {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80, #facc15);
+  background-size: 800% 800%;
+  animation: gradientWave 15s ease infinite;
+  z-index: -1; /* behind everything */
+}
+
+/* Animation of background gradient shifting */
+@keyframes gradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =============================================================
+   ================ MIMI STYLING END ==========================
+   ============================================================ */
+
+
+/* ============================================================
+   ================ CONNECT STYLING START ======================
+   ============================================================ */
+
+body.connect {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+}
+
+.wrapper_connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.connect-container {
+  width: 100%;
+  max-width: 700px;
+  padding: 0;
+}
+
+.connect-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #15dceb;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.connect-subtitle {
+  font-size: 1.1rem;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.connect-options {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.connect-card {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(21, 220, 235, 0.2);
+  width: 180px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.connect-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(21, 220, 235, 0.4);
+}
+
+.connect-card i {
+  font-size: 1.8rem;
+  color: #15dceb;
+  margin-bottom: 10px;
+}
+
+.connect-card h3 {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.connect-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  word-break: break-word;
+}
+
+.connect-card a {
+  color: #15dceb;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.connect-card a:hover {
+  color: #13b2cc;
+  text-decoration: none;
+}
+
+.contact-form {
+  background-color: #111;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(21, 220, 235, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 0 6px rgba(21, 220, 235, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 10px rgba(21, 220, 235, 0.4);
+}
+
+.contact-form button {
+  background-color: #15dceb;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  align-self: flex-end;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #13b2cc;
+}
+
+.contact-info {
+  margin-top: 40px;
+  color: #ccc;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.contact-info a {
+  color: #15dceb;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #13b2cc;
+  text-decoration: none;
+}
+
+.connect-subtext {
+  display: block;
+  font-size: 0.85rem;
+  color: #888; /* lighter gray */
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    align-self: center;
+  }
+}
+
+
+/* ============================================================
+   ================ CONNECT STYLING End =======================
+   ============================================================ */
+
+/* Global Reset */
+
+
 
 /* Light Mode styling */
 
