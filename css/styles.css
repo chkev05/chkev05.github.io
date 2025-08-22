@@ -21,7 +21,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 220px;
+  width: 220px; /* NEEDS WORK */
   background: #111; /* Darker background */
   padding: 120px 20px 30px;
   height: 100vh;
@@ -725,6 +725,168 @@ body.about-me {
 
 /* ============================================================
    ================ ABOUT ME STYLING END ======================
+   ============================================================ */
+
+
+/* ============================================================
+   ================ PROJECTS STYLING START ====================
+   ============================================================ */
+
+  
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Projects Page Body */
+body.projects {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+/* Wrapper */
+.wrapper_projects {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Container */
+.projects-container {
+    max-width: 1100px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Page Title */
+.projects-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #15dceb;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Project List - Grid Layout */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 25px; /* vertical and horizontal gaps */
+    justify-content: center; /* center grid horizontally */
+}
+
+/* Individual Project Block */
+.project-item {
+    background-color: #111;
+    padding: 30px 25px 35px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(21, 220, 235, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(33.333% - 25px); /* 3 items per row with gaps */
+    max-width: 360px; /* limit max width for readability */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 280px; /* prevent cards from getting too narrow */
+}
+
+
+.project-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 24px rgba(21, 220, 235, 0.3);
+}
+
+/* Project Title */
+.project-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+    font-weight: 600;
+    color: #15dceb;
+}
+
+/* Project Type Icon */
+.project-icon {
+    position: relative;
+    font-size: 3rem;
+    color: #15dceb;
+    margin-bottom: 15px;
+    text-align: center;
+    /* Create the circle around the icon */
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #111; /* same as project-item background */
+    margin-left: auto;
+    margin-right: auto;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Glow effect on hover of the whole project item */
+.project-item:hover .project-icon {
+    background-color: #15dceb; /* highlight color */
+    box-shadow: 0 0 15px 5px #15dceb;
+    color: #000; /* icon color changes for contrast */
+}
+
+/* Project Description */
+.project-item p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 25px;
+    max-width: 320px;
+}
+
+.project-link-wrapper {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.project-link-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    background-color: #15dceb;
+    color: #000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.project-link-icon:hover {
+    background-color: #13b2cc;
+    transform: scale(1.1);
+}
+
+/* Responsive Enhancements */
+@media (max-width: 1023px) {
+    .project-item {
+        flex: 1 1 calc(50% - 25px); /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 767px) {
+    .project-item {
+        flex: 1 1 100%; /* 1 per row on phones */
+        max-width: 100%;
+    }
+}
+
+  
+
+/* ============================================================
+   ================ PROJECTS STYLING END ======================
    ============================================================ */
 
 
