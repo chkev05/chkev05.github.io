@@ -148,3 +148,10 @@ function initThemeToggle() {
 }
 
 document.addEventListener('DOMContentLoaded', initThemeToggle);
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (!window.location.hash) {
+    window.location.hash = '#home';
+  }
+  showSection(window.location.hash);
+});
