@@ -10,8 +10,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <!-- <style>
-        .play-button {
+    <style>
+        #mimi .play-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -24,7 +24,7 @@
             cursor: pointer;
             z-index: 999;
         }
-    </style> -->
+    </style>
 </head>
 
 <body>
@@ -44,6 +44,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#mimi">About Mimi</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -244,6 +245,10 @@
 
         <section id="mimi">
             <div class="mimi-wrapper">
+                <!-- Play music button -->
+                <button id="music-toggle" class="play-button" onclick="toggleMusic()">
+                    🎵 Play Music
+                </button>
                 <div class="mimi-container">
                     <h1 class="mimi-title">About Me</h1>
 
@@ -266,7 +271,7 @@
                             </div>
                             <h2>Skills</h2>
                             <p>
-                                HTML, CSS (SASS), JavaScript, React, GSAP, Node, Git, UI/UX Design, and more. Always exploring new ways to enhance creativity through code.
+                                HTML, CSS, JavaScript, React, Node, Git, UI/UX Design, and more. Always exploring new ways to enhance creativity through code.
                             </p>
                         </div>
 
@@ -291,7 +296,7 @@
                                 Whether it's a project idea, a collaboration, or a quick hello — reach out anytime.
                             </p>
                             <div class="mimi-link-wrapper">
-                                <a href="connect.html" class="mimi-link-icon" target="_blank" title="Connect with Me">
+                                <a href="#contact" class="mimi-link-icon" title="Connect with Me">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </div>
@@ -357,6 +362,134 @@
     <!-- ===== Main Content End ===== -->
 
     <script src="js/scripts.js"></script>
+    <!-- Hidden audio element -->
+    <audio id="bg-music" loop>
+        <source src="Serebro- Mi Mi Mi (Lyrics Video) (mp3cut.net).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function createOrbs() {
+            if (document.body.classList.contains('party-mode')) {
+            ['orb1', 'orb2', 'orb3'].forEach(className => {
+                const orb = document.createElement('div');
+                orb.classList.add('floating-orb', className);
+                orb.style.left = Math.random() * window.innerWidth + 'px';
+                orb.style.top = Math.random() * window.innerHeight + 'px';
+                document.body.appendChild(orb);
+
+                setTimeout(() => orb.remove(), 15000); // Remove after 15s
+            });
+            }
+        }
+
+        setInterval(createOrbs, 3000);
+    </script>
+
+    <script>
+        const music = document.getElementById('bg-music');
+        const button = document.getElementById('music-toggle');
+        const body = document.body;
+
+        music.volume = 0.2;
+
+        // Function to create floating orbs for party mode
+        function createOrb(className) {
+            const orb = document.createElement('div');
+            orb.classList.add('floating-orb', className);
+            orb.style.left = Math.random() * window.innerWidth + 'px';
+            orb.style.top = Math.random() * window.innerHeight + 'px';
+            document.body.appendChild(orb);
+            setTimeout(() => orb.remove(), 15000);
+        }
+
+        // Continuously create orbs only if party mode is active
+        let orbInterval;
+        function startOrbs() {
+            orbInterval = setInterval(() => {
+            ['orb1', 'orb2', 'orb3'].forEach(className => createOrb(className));
+            }, 3000);
+        }
+        function stopOrbs() {
+            clearInterval(orbInterval);
+            document.querySelectorAll('.floating-orb').forEach(orb => orb.remove());
+        }
+
+        // Attempt to autoplay music on page load
+        function playMusic() {
+            music.play()
+            .then(() => {
+                // Autoplay succeeded, update button and start party mode
+                button.innerHTML = '⏸ Mi Mi Mi';
+                body.classList.add('party-mode');
+                startOrbs();
+            })
+            .catch(() => {
+                // Autoplay failed, button shows play and no party mode
+                button.innerHTML = '🎵 Play Music';
+                body.classList.remove('party-mode');
+                stopOrbs();
+            });
+        }
+
+        function pauseMusic() {
+            music.pause();
+            button.innerHTML = '🎵 Play Music';
+            body.classList.remove('party-mode');
+            stopOrbs();
+        }
+
+        // window.addEventListener('DOMContentLoaded', () => {
+        //     const isMimiPage = window.location.hash === '#mimi';
+
+        //     if (!isMimiPage) return; // Only run on mimi.html
+
+        //     music.play()
+        //     .then(() => {
+        //         // Autoplay succeeded, update button and start party mode
+        //         button.innerHTML = '⏸ Mi Mi Mi';
+        //         body.classList.add('party-mode');
+        //         startOrbs();
+        //     })
+        //     .catch(() => {
+        //         // Autoplay failed, button shows play and no party mode
+        //         button.innerHTML = '🎵 Play Music';
+        //         body.classList.remove('party-mode');
+        //         stopOrbs();
+        //     });
+        // });
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash === '#mimi') {
+                playMusic();
+            }
+            else {
+                pauseMusic();
+            }
+        });
+
+        window.addEventListener('hashchange', () => {
+            if (window.location.hash === '#mimi') {
+                playMusic();
+            }
+            else {
+                pauseMusic();
+            }
+        });
+
+        function toggleMusic() {
+            if (music.paused) {
+            music.play();
+            button.innerHTML = '⏸ Mi Mi Mi';
+            body.classList.add('party-mode');
+            startOrbs();
+            } else {
+            music.pause();
+            button.innerHTML = '🎵 Play Music';
+            body.classList.remove('party-mode');
+            stopOrbs();
+            }
+        }
+    </script>
 
     <!-- ===== Master File End ===== -->
 </body>
