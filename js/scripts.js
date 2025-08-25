@@ -89,6 +89,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty('--accent-color-rgb', `${rgb.r}, ${rgb.g}, ${rgb.b}`);
       }
 
+      const darkerShade = darkenColor(selectedColor, 0.2);
+      document.documentElement.style.setProperty('--accent-color-hover', darkerShade);
+
       palette.classList.add('hidden');
     }
   });
@@ -113,7 +116,25 @@ document.addEventListener('DOMContentLoaded', () => {
       b: bigint & 255
     };
   }
+
+  // darken color function
+  function darkenColor(hex, percent) {
+    hex = hex.replace('#', '');
+    let num = parseInt(hex, 16);
+
+    let r = (num >> 16) & 0xFF;
+    let g = (num >> 8) & 0xFF;
+    let b = num & 0xFF;
+
+    r = Math.max(0, Math.min(255, Math.floor(r * (1 - percent))));
+    g = Math.max(0, Math.min(255, Math.floor(g * (1 - percent))));
+    b = Math.max(0, Math.min(255, Math.floor(b * (1 - percent))));
+
+    return '#' + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+  }
 });
+
+
 
 // Function to toggle between light and dark mode
 function initThemeToggle() {

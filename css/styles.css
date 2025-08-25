@@ -1,6 +1,7 @@
 :root {
   --accent-color: #15dceb; /* Bright teal */
   --accent-color-rgb: 21, 220, 235; /* RGB for box-shadow */
+  --accent-color-hover: #13b2cc; /* Darker teal for hover */
 }
 
 /* Reset & Base */
@@ -103,7 +104,7 @@ body {
   display: block;
   border-radius: 8px;
   background-color: #222;
-  box-shadow: 0 0 6px rgba(21, 220, 235, 0.15); /* slightly smaller shadow */
+  box-shadow: 0 0 6px rgba(var(--accent-color-rgb), 0.15); /* slightly smaller shadow */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -111,7 +112,7 @@ body {
 .sidebar .nav li a:focus {
   background-color: var(--accent-color);
   color: #000;
-  box-shadow: 0 0 12px rgba(21, 220, 235, 0.6); /* adjusted shadow on hover */
+  box-shadow: 0 0 12px rgba(var(--accent-color-rgb), 0.6); /* adjusted shadow on hover */
 }
 
 /* Main content area */
@@ -133,7 +134,7 @@ section {
   border-radius: 12px;
   padding: 60px 40px;
   margin-bottom: 40px;
-  box-shadow: 0 0 15px rgba(21, 220, 235, 0.1);
+  box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.1);
   opacity: 1;
   transform: translateY(50px);
   transition: opacity 1s ease-out, transform 1s ease-out;
@@ -400,7 +401,7 @@ html {
 /* Image styling */
 .homepage-image img {
   border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(21, 220, 235, 0.3);
+  box-shadow: 0 4px 15px rgba(var(--accent-color-rgb), 0.3);
   width: 250px;
   height: 250px;
   object-fit: cover;
@@ -411,7 +412,7 @@ html {
 
 .homepage-image img:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(21, 220, 235, 0.5);
+  box-shadow: 0 6px 20px rgba(var(--accent-color-rgb), 0.5);
 }
 
 /* Resume Button */
@@ -430,13 +431,13 @@ html {
   margin-bottom: 30px;
   text-align: center;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(21, 220, 235, 0.4);
+  box-shadow: 0 4px 10px rgba(var(--accent-color-rgb), 0.4);
 }
 
 .resume-button:hover,
 .resume-button:focus {
   background-color: var(--accent-color);
-  box-shadow: 0 6px 15px rgba(19, 178, 204, 0.6);
+  box-shadow: 0 6px 15px rgba(var(--accent-color-rgb), 0.6);
   outline: none;
 }
 
@@ -455,7 +456,7 @@ html {
 /* Apply the flip animation */
 .homepage-image img {
   border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(21, 220, 235, 0.3);
+  box-shadow: 0 4px 15px rgba(var(--accent-color-rgb), 0.3);
   width: 250px;
   height: 250px;
   object-fit: cover;
@@ -465,7 +466,7 @@ html {
 
 .homepage-image img:hover {
   animation-play-state: paused;
-  box-shadow: 0 6px 20px rgba(21, 220, 235, 0.5);
+  box-shadow: 0 6px 20px rgba(var(--accent-color-rgb), 0.5);
 }
 
 /* ============================================================
@@ -590,7 +591,7 @@ body.about-me {
     background-color: #111;
     padding: 8px 12px;
     border-radius: 6px;
-    box-shadow: 0 0 8px rgba(21, 220, 235, 0.3);
+    box-shadow: 0 0 8px rgba(var(--accent-color-rgb), 0.3);
     color: var(--accent-color);
     word-wrap: break-word;
 }
@@ -624,7 +625,7 @@ body.about-me {
     border-radius: 8px;
     text-decoration: none;
     text-align: center;
-    box-shadow: 0 0 8px rgba(21, 220, 235, 0.5);
+    box-shadow: 0 0 8px rgba(var(--accent-color-rgb), 0.5);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -677,7 +678,7 @@ body.about-me {
     background-color: #111;
     padding: 15px 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(21, 220, 235, 0.1);
+    box-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.1);
     margin-bottom: 20px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -685,7 +686,7 @@ body.about-me {
 .wrapper_aboutme .school:hover,
 .wrapper_aboutme .job:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(21, 220, 235, 0.25);
+    box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.25);
 }
 
 .wrapper_aboutme .school h3,
@@ -768,7 +769,7 @@ body.projects {
 .projects-title {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #15dceb;
+    color: var(--accent-color);
     margin-bottom: 40px;
     text-align: center;
 }
@@ -786,7 +787,7 @@ body.projects {
     background-color: #111;
     padding: 30px 25px 35px;
     border-radius: 12px;
-    box-shadow: 0 0 12px rgba(21, 220, 235, 0.12);
+    box-shadow: 0 0 12px rgba(var(--accent-color-rgb), 0.12);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex: 1 1 calc(33.333% - 25px); /* 3 items per row with gaps */
     max-width: 360px; /* limit max width for readability */
@@ -800,7 +801,7 @@ body.projects {
 
 .project-item:hover {
     transform: translateY(-6px);
-    box-shadow: 0 0 24px rgba(21, 220, 235, 0.3);
+    box-shadow: 0 0 24px rgba(var(--accent-color-rgb), 0.3);
 }
 
 /* Project Title */
@@ -808,14 +809,17 @@ body.projects {
     font-size: 1.5rem;
     margin-bottom: 14px;
     font-weight: 600;
-    color: #15dceb;
+    color: var(--accent-color);
 }
 
 /* Project Type Icon */
 .project-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     font-size: 3rem;
-    color: #15dceb;
+    color: var(--accent-color);
     margin-bottom: 15px;
     text-align: center;
     /* Create the circle around the icon */
@@ -831,8 +835,8 @@ body.projects {
 
 /* Glow effect on hover of the whole project item */
 .project-item:hover .project-icon {
-    background-color: #15dceb; /* highlight color */
-    box-shadow: 0 0 15px 5px #15dceb;
+    background-color: var(--accent-color); /* highlight color */
+    box-shadow: 0 0 15px 5px var(--accent-color);
     color: #000; /* icon color changes for contrast */
 }
 
@@ -857,7 +861,7 @@ body.projects {
     height: 50px;
     border-radius: 8px;
     font-size: 1.4rem;
-    background-color: #15dceb;
+    background-color: var(--accent-color);
     color: #000;
     transition: background-color 0.3s ease, transform 0.3s ease;
     display: inline-flex;
@@ -867,7 +871,7 @@ body.projects {
 }
 
 .project-link-icon:hover {
-    background-color: #13b2cc;
+    background-color: var(--accent-color-hover);
     transform: scale(1.1);
 }
 
@@ -928,7 +932,7 @@ body.mimi-body {
 .mimi-title {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #15dceb;
+  color: var(--accent-color);
   margin-bottom: 40px;
   text-align: center;
 }
@@ -946,7 +950,7 @@ body.mimi-body {
   background-color: #111;
   padding: 30px 25px 35px;
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(21, 220, 235, 0.12);
+  box-shadow: 0 0 12px rgba(var(--accent-color-rgb), 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex: 1 1 calc(33.333% - 25px);
   max-width: 360px;
@@ -959,13 +963,13 @@ body.mimi-body {
 
 .mimi-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 24px rgba(21, 220, 235, 0.3);
+  box-shadow: 0 0 24px rgba(var(--accent-color-rgb), 0.3);
 }
 
 /* Icon */
 .mimi-icon {
   font-size: 3rem;
-  color: #15dceb;
+  color: var(--accent-color);
   background-color: #111;
   width: 60px;
   height: 60px;
@@ -977,8 +981,8 @@ body.mimi-body {
 }
 
 .mimi-card:hover .mimi-icon {
-  background-color: #15dceb;
-  box-shadow: 0 0 15px 5px #15dceb;
+  background-color: var(--accent-color);
+  box-shadow: 0 0 15px 5px var(--accent-color);
   color: #000;
 }
 
@@ -986,7 +990,7 @@ body.mimi-body {
 .mimi-card h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #15dceb;
+  color: var(--accent-color);
   margin-bottom: 14px;
 }
 
@@ -1011,7 +1015,7 @@ body.mimi-body {
   height: 50px;
   border-radius: 8px;
   font-size: 1.4rem;
-  background-color: #15dceb;
+  background-color: var(--accent-color);
   color: #000;
   display: inline-flex;
   justify-content: center;
@@ -1021,7 +1025,7 @@ body.mimi-body {
 }
 
 .mimi-link-icon:hover {
-  background-color: #13b2cc;
+  background-color: var(--accent-color-hover);
   transform: scale(1.1);
 }
 
@@ -1096,7 +1100,7 @@ body.connect {
 .connect-title {
   font-size: 2rem;
   font-weight: 600;
-  color: #15dceb;
+  color: var(--accent-color);
   margin-bottom: 10px;
   text-align: left;
 }
@@ -1120,7 +1124,7 @@ body.connect {
   background-color: #111;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(21, 220, 235, 0.2);
+  box-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.2);
   width: 180px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1128,12 +1132,12 @@ body.connect {
 
 .connect-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(21, 220, 235, 0.4);
+  box-shadow: 0 0 15px rgba(var(--accent-color-rgb), 0.4);
 }
 
 .connect-card i {
   font-size: 1.8rem;
-  color: #15dceb;
+  color: var(--accent-color);
   margin-bottom: 10px;
 }
 
@@ -1150,13 +1154,13 @@ body.connect {
 }
 
 .connect-card a {
-  color: #15dceb;
+  color: var(--accent-color);
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 .connect-card a:hover {
-  color: #13b2cc;
+  color: var(--accent-color-hover);
   text-decoration: none;
 }
 
@@ -1164,7 +1168,7 @@ body.connect {
   background-color: #111;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 12px rgba(21, 220, 235, 0.15);
+  box-shadow: 0 0 12px rgba(var(--accent-color-rgb), 0.15);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -1181,17 +1185,17 @@ body.connect {
   color: #fff;
   font-size: 1rem;
   outline: none;
-  box-shadow: 0 0 6px rgba(21, 220, 235, 0.1);
+  box-shadow: 0 0 6px rgba(var(--accent-color-rgb), 0.1);
   transition: box-shadow 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  box-shadow: 0 0 10px rgba(21, 220, 235, 0.4);
+  box-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.4);
 }
 
 .contact-form button {
-  background-color: #15dceb;
+  background-color: var(--accent-color);
   color: #000;
   font-weight: 600;
   padding: 12px 20px;
@@ -1204,7 +1208,7 @@ body.connect {
 }
 
 .contact-form button:hover {
-  background-color: #13b2cc;
+  background-color: var(--accent-color-hover);
 }
 
 .contact-info {
@@ -1215,13 +1219,13 @@ body.connect {
 }
 
 .contact-info a {
-  color: #15dceb;
+  color: var(--accent-color);
   text-decoration: underline;
   transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-  color: #13b2cc;
+  color: var(--accent-color-hover);
   text-decoration: none;
 }
 
