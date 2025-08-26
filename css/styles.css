@@ -528,6 +528,7 @@ body.about-me {
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 10px;
+    color: #ccc
 }
 
 /* Bio paragraph */
@@ -535,6 +536,7 @@ body.about-me {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 20px;
+    color: #ccc
 }
 
 /* Resume button stays aligned to the right */
@@ -1320,10 +1322,25 @@ body.light-mode .theme-button i.fas.fa-sun {
 
 body.light-mode .wrapper_aboutme .personal-info p,
 body.light-mode .wrapper_aboutme .school,
-body.light-mode .wrapper_aboutme .job {
-  background-color: #fff;
+body.light-mode .wrapper_aboutme .job,
+body.light-mode .project-item, 
+body.light-mode .project-icon,
+body.light-mode .mimi-card,
+body.light-mode .mimi-icon,
+body.light-mode .contact-form,
+body.light-mode .connect-card,
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+  background-color: #fefefe;
   color: var(--accent-color);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 8px rgba(var(--accent-color-rgb), 0.5);
+}
+
+body.light-mode .project-item:hover .project-icon,
+body.light-mode .project-link-icon,
+body.light-mode .mimi-card:hover .mimi-icon,
+body.light-mode .mimi-link-icon {
+  color: #eeeeee;
 }
 
 body.light-mode .wrapper_aboutme .school ul li,
