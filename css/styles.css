@@ -1178,7 +1178,7 @@ body.connect {
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
+  width: 520px;
   padding: 12px 15px;
   box-sizing: border-box;
   border: none;
