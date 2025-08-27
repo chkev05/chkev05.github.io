@@ -1307,8 +1307,19 @@ body.light-mode section h2 {
   color: var(--accent-color);
 }
 
-body.light-mode section p {
+/* make the text darker so it can be seen */
+body.light-mode section p,
+body.light-mode .wrapper_aboutme .intro,
+body.light-mode .wrapper_aboutme .bio {
   color: #333;
+}
+
+body.light-mode .connect-subtext {
+  color: #333
+}
+
+body.light-mode .connect-card h3 {
+  color: #000
 }
 
 body.light-mode footer {
